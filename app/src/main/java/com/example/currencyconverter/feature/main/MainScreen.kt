@@ -1,6 +1,5 @@
-package com.example.currencyconverter.features
+package com.example.currencyconverter.feature
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -43,9 +42,6 @@ fun MainScreen(
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     Spacer(modifier = Modifier.weight(1f))
-                    Image(
-                        painter =
-                    )
                 }
             }
         }
