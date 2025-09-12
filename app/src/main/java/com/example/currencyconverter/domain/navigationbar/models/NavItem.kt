@@ -1,4 +1,6 @@
 package com.example.currencyconverter.domain.navigationbar.models
 
-class NavItem {
-}
+data class NavItem (
+    val name: String,
+    val icon: Int
+)

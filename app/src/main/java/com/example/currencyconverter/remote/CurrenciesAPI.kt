@@ -2,7 +2,8 @@ package com.example.currencyconverter.remote
 
 import retrofit2.http.GET
 
-interface ListCurrenciesAPI {
+interface CurrenciesAPI {
 
-    @GET("")
+    @GET("currencies")
+    suspend fun getCurrenciesList(): Map<String, String>
 }

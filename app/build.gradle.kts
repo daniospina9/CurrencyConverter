@@ -2,6 +2,10 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+
+    id("com.google.devtools.ksp")
+
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -56,4 +60,24 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    //viewmodel
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+
+    //Retrofit
+    implementation(libs.retrofit)
+
+    // Gson Converter
+    implementation(libs.converter.gson)
+
+    // OkHttp (usually included transitively by Retrofit, but good to have explicit control)
+    implementation(libs.okhttp) // Check for the latest stable version
+
+    //Room
+    implementation(libs.androidx.room.runtime)
+    ksp(libs.androidx.room.compiler)
+
+    //Hilt
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.android.compiler)
 }
