@@ -3,7 +3,7 @@ package com.example.currencyconverter.di
 import com.example.currencyconverter.domain.exchange.usecases.FetchCurrenciesList
 import com.example.currencyconverter.domain.exchange.usecases.ObserveAllCurrencies
 import com.example.currencyconverter.domain.exchange.usecases.RefreshCurrenciesList
-import com.example.currencyconverter.domain.exchange.usecases.SaveAllCurrencies
+import com.example.currencyconverter.domain.exchange.usecases.ReplaceAllCurrencies
 import com.example.currencyconverter.remote.CurrenciesAPI
 import com.example.currencyconverter.repository.CurrenciesRepository
 import com.google.gson.GsonBuilder
@@ -43,7 +43,7 @@ object CurrenciesUseCaseModule {
     @Provides
     fun provideSaveAllCurrencies(
         repository: CurrenciesRepository
-    ): SaveAllCurrencies = SaveAllCurrencies(
+    ): ReplaceAllCurrencies = ReplaceAllCurrencies(
         repository = repository
     )
 
@@ -59,9 +59,9 @@ object CurrenciesUseCaseModule {
     @Provides
     fun provideRefreshCurrenciesList(
         fetchCurrenciesList: FetchCurrenciesList,
-        saveAllCurrencies: SaveAllCurrencies
+        replaceAllCurrencies: ReplaceAllCurrencies
     ): RefreshCurrenciesList = RefreshCurrenciesList(
         fetchCurrenciesList = fetchCurrenciesList,
-        saveAllCurrencies = saveAllCurrencies
+        replaceAllCurrencies = replaceAllCurrencies
     )
 }

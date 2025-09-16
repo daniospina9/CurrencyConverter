@@ -23,10 +23,13 @@ fun CurrenciesDbDto.toCurrencies(): Currencies {
 suspend fun CurrenciesAPI.toCurrencies(): List<Currencies> {
 
     val currenciesMap = this.getCurrenciesList()
-    return currenciesMap.map { (symbol, name) ->
+    val originalList = currenciesMap.map { (symbol, name) ->
         Currencies(
             currencySymbol = symbol,
             currencyName = name
         )
-    }
+    }.toMutableList()
+    val usdCurrency = Currencies(currencySymbol = "USD", currencyName = "USD Dollar")
+    val completeList = originalList + usdCurrency
+    return completeList
 }

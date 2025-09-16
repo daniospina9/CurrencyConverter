@@ -15,3 +15,5 @@ val BoxesBorderColor = Color(0xFFEEF0F3)
 val InnerBoxesColor = Color(0xFF9BA7B4)
 
 val ConvertButtonColor = Color(0xFF1380EC)
+
+val ConversionTextColor = Color(0xFF515C73)

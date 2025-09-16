@@ -17,8 +17,8 @@ class CurrenciesDataSourceImpl(
         return api.toCurrencies()
     }
 
-    override suspend fun saveAll(currencies: List<Currencies>) {
-        currenciesDao.saveAll(currencies.map { it.toDbDto() })
+    override suspend fun replaceAll(currencies: List<Currencies>) {
+        currenciesDao.replaceAll(currencies.map { it.toDbDto() })
     }
 
     override fun observeAll(): Flow<List<Currencies>> = currenciesDao.observeAll().map { flowList ->

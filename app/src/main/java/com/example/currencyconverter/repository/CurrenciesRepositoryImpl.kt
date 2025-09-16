@@ -12,8 +12,8 @@ class CurrenciesRepositoryImpl(
         return currenciesDataSource.fetchCurrenciesList()
     }
 
-    override suspend fun saveAll(currencies: List<Currencies>) {
-        currenciesDataSource.saveAll(currencies)
+    override suspend fun replaceAll(currencies: List<Currencies>) {
+        currenciesDataSource.replaceAll(currencies)
     }
 
     override fun observeAll(): Flow<List<Currencies>> = currenciesDataSource.observeAll()

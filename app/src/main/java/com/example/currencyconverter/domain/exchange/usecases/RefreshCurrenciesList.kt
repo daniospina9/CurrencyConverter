@@ -1,10 +1,10 @@
 package com.example.currencyconverter.domain.exchange.usecases
 
 class RefreshCurrenciesList(
-    val fetchCurrenciesList: FetchCurrenciesList,
-    val saveAllCurrencies: SaveAllCurrencies
+    private val fetchCurrenciesList: FetchCurrenciesList,
+    private val replaceAllCurrencies: ReplaceAllCurrencies
 ) {
     suspend operator fun invoke() {
-        saveAllCurrencies(fetchCurrenciesList())
+        replaceAllCurrencies(fetchCurrenciesList())
     }
 }
