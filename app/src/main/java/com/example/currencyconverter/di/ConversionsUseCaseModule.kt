@@ -5,6 +5,8 @@ import com.example.currencyconverter.database.ConversionsDao
 import com.example.currencyconverter.datasource.ConversionsDataSource
 import com.example.currencyconverter.datasource.ConversionsDataSourceImpl
 import com.example.currencyconverter.domain.exchange.usecases.BringConversion
+import com.example.currencyconverter.domain.exchange.usecases.CleanAllConversions
+import com.example.currencyconverter.domain.exchange.usecases.GetAllConversions
 import com.example.currencyconverter.domain.exchange.usecases.ObserveConversionId
 import com.example.currencyconverter.domain.exchange.usecases.SaveConversion
 import com.example.currencyconverter.remote.RateConverterAPI
@@ -71,6 +73,22 @@ object ConversionsUseCaseModule {
     fun provideObserveConversionId(
         repository: ConversionsRepository
     ): ObserveConversionId = ObserveConversionId(
+        repository = repository
+    )
+
+    @Singleton
+    @Provides
+    fun provideGetAllConversions(
+        repository: ConversionsRepository
+    ): GetAllConversions = GetAllConversions(
+        repository = repository
+    )
+
+    @Singleton
+    @Provides
+    fun provideCleanAllConversions(
+        repository: ConversionsRepository
+    ): CleanAllConversions = CleanAllConversions(
         repository = repository
     )
 }

@@ -9,7 +9,8 @@ fun Conversions.toDbDto(): ConversionsDbDto {
         fromCurrencyName = fromCurrencyName,
         toCurrencyName = toCurrencyName,
         amount = amount,
-        conversion = conversion
+        conversion = conversion,
+        date = date
     )
 }
 
@@ -19,6 +20,7 @@ fun ConversionsDbDto.toConversions(): Conversions {
         fromCurrencyName = fromCurrencyName,
         toCurrencyName = toCurrencyName,
         amount = amount,
-        conversion = conversion
+        conversion = conversion,
+        date = date
     )
 }

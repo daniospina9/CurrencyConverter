@@ -18,4 +18,12 @@ class ConversionsRepositoryImpl(
     override suspend fun observeConversionId(conversionId: Long): Conversions {
         return conversionsDataSource.observeConversionId(conversionId)
     }
+
+    override suspend fun getAll(): List<Conversions> {
+        return conversionsDataSource.getAll()
+    }
+
+    override suspend fun cleanAll() {
+        conversionsDataSource.cleanAll()
+    }
 }

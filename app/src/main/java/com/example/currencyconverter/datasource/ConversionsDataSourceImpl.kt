@@ -22,4 +22,12 @@ class ConversionsDataSourceImpl(
     override suspend fun observeConversionId(conversionId: Long): Conversions {
         return conversionsDao.observeConversionId(conversionId).toConversions()
     }
+
+    override suspend fun getAll(): List<Conversions> {
+        return conversionsDao.getAll().map { it.toConversions() }
+    }
+
+    override suspend fun cleanAll() {
+        conversionsDao.cleanAll()
+    }
 }

@@ -9,4 +9,8 @@ interface ConversionsRepository {
     suspend fun saveConversions(conversions: Conversions): Long
 
     suspend fun observeConversionId(conversionId: Long): Conversions
+
+    suspend fun getAll(): List<Conversions>
+
+    suspend fun cleanAll()
 }

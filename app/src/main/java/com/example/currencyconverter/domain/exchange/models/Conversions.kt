@@ -6,5 +6,6 @@ data class Conversions(
     val fromCurrencyName: String,
     val toCurrencyName: String,
     val amount: String,
-    val conversion: String
+    val conversion: String,
+    val date: Long
 )

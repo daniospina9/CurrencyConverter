@@ -9,8 +9,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.currencyconverter.R
 import com.example.currencyconverter.domain.navigationbar.models.NavItem
 import com.example.currencyconverter.feature.main.MainViewModel
@@ -18,7 +18,7 @@ import com.example.currencyconverter.ui.theme.BoxesBorderColor
 
 @Composable
 fun NavigationBarContent(
-    viewModel: MainViewModel = viewModel ()
+    viewModel: MainViewModel = hiltViewModel()
 ) {
     val selectedIndex by viewModel.navigationBarState.collectAsStateWithLifecycle()
 
@@ -37,7 +37,7 @@ fun NavigationBarContent(
         ) {
             itemList.forEachIndexed { index, item ->
                 CurrencyItems(navItem = item, isSelected = index == selectedIndex.selectedIndex, onItemClick = {
-                    viewModel.setSelectedIndex(selectedIndex = index)
+                    viewModel.navigateToHistory()
                 })
             }
 

@@ -1,5 +1,6 @@
 package com.example.currencyconverter.feature.main
 
+import android.icu.util.Calendar
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.currencyconverter.domain.exchange.models.Conversions
@@ -92,10 +93,6 @@ class MainViewModel @Inject constructor(
         _state.update { it.copy(amount =  amount) }
     }
 
-    fun setSelectedIndex(selectedIndex: Int) {
-        _navigationBarState.update { it.copy(selectedIndex = selectedIndex) }
-    }
-
     fun setFromCurrenciesExpanded(fromCurrenciesExpanded: Boolean) {
         _mainComponentsState.update { it.copy(fromCurrenciesExpanded = fromCurrenciesExpanded) }
     }
@@ -135,11 +132,13 @@ class MainViewModel @Inject constructor(
                     val toName = _saveConversionsState.value.toCurrencyName
                     val amountInt = _state.value.amount.toInt()
                     val conversion = bringConversion(amount = amountInt, from = from, to = to)
+                    val date = Calendar.getInstance().timeInMillis
                     val conversionId = saveConversion(Conversions(
                         fromCurrencyName = fromName,
                         toCurrencyName = toName,
                         amount = amountInt.toString(),
-                        conversion = conversion.toString()
+                        conversion = conversion.toString(),
+                        date = date
                     ))
                     showMessageConversion(conversionId = conversionId)
                 } catch (e: Exception) {
@@ -163,7 +162,14 @@ class MainViewModel @Inject constructor(
         }
     }
 
+    fun navigateToHistory() {
+        viewModelScope.launch(Dispatchers.IO) {
+            _events.send(Event.NavigateToHistory)
+        }
+    }
+
     sealed class Event {
         data class ShowMessage(val message: String): Event()
+        data object NavigateToHistory: Event()
     }
 }

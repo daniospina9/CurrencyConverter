@@ -1,4 +1,6 @@
 package com.example.currencyconverter.navigation.main
 
-object MainRoute {
-}
+import kotlinx.serialization.Serializable
+
+@Serializable
+data object MainRoute

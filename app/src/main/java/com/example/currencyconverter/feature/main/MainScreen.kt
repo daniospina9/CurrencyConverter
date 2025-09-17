@@ -37,10 +37,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
 import com.example.currencyconverter.R
 import com.example.currencyconverter.feature.main.composable.NavigationBarContent
+import com.example.currencyconverter.navigation.history.HistoryRoute
 import com.example.currencyconverter.ui.theme.BoxesBorderColor
 import com.example.currencyconverter.ui.theme.ConversionTextColor
 import com.example.currencyconverter.ui.theme.ConvertButtonColor
@@ -48,7 +50,8 @@ import com.example.currencyconverter.ui.theme.InnerBoxesColor
 
 @Composable
 fun MainScreen(
-    viewModel: MainViewModel = viewModel()
+    viewModel: MainViewModel = hiltViewModel(),
+    navController: NavController
 ) {
     val context = LocalContext.current
 
@@ -62,6 +65,11 @@ fun MainScreen(
             when(event) {
                 is MainViewModel.Event.ShowMessage -> {
                     Toast.makeText(context, event.message, Toast.LENGTH_SHORT).show()
+                }
+                is MainViewModel.Event.NavigateToHistory -> {
+                    navController.navigate(
+                        HistoryRoute
+                    )
                 }
             }
         }
@@ -250,7 +258,8 @@ fun MainScreen(
                 },
                 colors = ButtonDefaults.buttonColors(
                     containerColor = ConvertButtonColor
-                ), shape = RoundedCornerShape(15.dp)
+                ),
+                shape = RoundedCornerShape(15.dp)
             ) {
                 Text(
                     text = "Convert",

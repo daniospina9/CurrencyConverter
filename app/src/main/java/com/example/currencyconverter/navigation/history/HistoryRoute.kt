@@ -1,4 +1,6 @@
 package com.example.currencyconverter.navigation.history
 
-object HistoryRoute {
-}
+import kotlinx.serialization.Serializable
+
+@Serializable
+data object HistoryRoute
