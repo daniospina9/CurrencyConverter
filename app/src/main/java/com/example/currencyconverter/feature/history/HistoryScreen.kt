@@ -27,7 +27,6 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
 import com.example.currencyconverter.feature.history.composable.NavigationBarContent2
-import com.example.currencyconverter.navigation.main.MainRoute
 import com.example.currencyconverter.ui.theme.ConversionTextColor
 import com.example.currencyconverter.ui.theme.ConvertButtonColor
 import com.example.currencyconverter.ui.utils.formatDate
