@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">CurrencyConverter</string>
+    <string name="converter">Converter</string>
+    <string name="history">History</string>
+    <string name="date">Date: %1$s</string>
+    <string name="clean_history">Clean History</string>
+    <string name="currency_converter">Currency Converter</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="enter_amount">Enter amount</string>
+    <string name="convert">Convert</string>
 </resources>

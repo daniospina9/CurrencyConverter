@@ -33,6 +33,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
@@ -89,7 +90,7 @@ fun MainScreen(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = "Currency Converter",
+                text = stringResource(R.string.currency_converter),
                 fontSize = 18.sp,
                 fontWeight = FontWeight.ExtraBold
             )
@@ -98,7 +99,7 @@ fun MainScreen(
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Text(
-                    text = "from"
+                    text = stringResource(R.string.from)
                 )
             }
             Spacer(modifier = Modifier.height(3.dp))
@@ -165,7 +166,7 @@ fun MainScreen(
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Text(
-                    text = "to"
+                    text = stringResource(R.string.to)
                 )
             }
             Spacer(modifier = Modifier.height(3.dp))
@@ -240,7 +241,7 @@ fun MainScreen(
                 },
                 placeholder = {
                     Text(
-                        text = "Enter amount",
+                        text = stringResource(R.string.enter_amount),
                         color = InnerBoxesColor
                     )
                 },
@@ -262,7 +263,7 @@ fun MainScreen(
                 shape = RoundedCornerShape(15.dp)
             ) {
                 Text(
-                    text = "Convert",
+                    text = stringResource(R.string.convert),
                     color = Color.White,
                     fontWeight = FontWeight.ExtraBold
                 )

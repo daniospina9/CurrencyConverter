@@ -20,12 +20,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
+import com.example.currencyconverter.R
 import com.example.currencyconverter.feature.history.composable.NavigationBarContent2
 import com.example.currencyconverter.ui.theme.ConversionTextColor
 import com.example.currencyconverter.ui.theme.ConvertButtonColor
@@ -65,7 +67,7 @@ fun HistoryScreen(
                 count = conversionsList.size
             ) {
                 Text(
-                    text = "Date: ${formatDate(conversionsList[it].date)}"
+                    text = stringResource(R.string.date, formatDate(conversionsList[it].date))
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 Row(
@@ -104,7 +106,7 @@ fun HistoryScreen(
                 shape = RoundedCornerShape(15.dp)
             ) {
                 Text(
-                    text = "Clean History",
+                    text = stringResource(R.string.clean_history),
                     color = Color.White,
                     fontWeight = FontWeight.ExtraBold
                 )

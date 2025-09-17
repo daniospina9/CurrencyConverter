@@ -8,6 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -24,8 +25,8 @@ fun NavigationBarContent2(
     val selectedIndex by viewModel.navigationBarState.collectAsStateWithLifecycle()
 
     val itemList = listOf(
-        NavItem(name = "Converter", icon = R.drawable.currency_dollar),
-        NavItem(name = "History", icon = R.drawable.history)
+        NavItem(name = stringResource(R.string.converter), icon = R.drawable.currency_dollar),
+        NavItem(name = stringResource(R.string.history), icon = R.drawable.history)
     )
     Column {
         Divider(
