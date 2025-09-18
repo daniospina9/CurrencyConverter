@@ -25,7 +25,9 @@ It is designed with a clean architecture approach, ensuring scalability, maintai
 ## 🛠️ Technologies Used
 - **Kotlin** → Main development language.  
 - **Android SDK** → Mobile development framework.  
-- **Coroutines & Flow** → Asynchronous and reactive programming.  
+- **Coroutines & Flow** → Asynchronous and reactive programming.
+- **Dagger Hilt** → Dependency Injection
+- **Room Database, MySQL** → Data persistence
 - **Retrofit** → REST API client for fetching exchange rates.  
 - **ViewModel (Jetpack)** → Lifecycle-aware state management.  
 - **LiveData / StateFlow** → Reactive data observation.  
