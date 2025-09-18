@@ -50,7 +50,7 @@ cd CurrencyConverter
 
 - Run the project with the Run ▶️ button.
 
-- Or, if you prefer, download the app-debug.apk directly and run it on your own device.
+- Or, if you prefer, download the app-release-unsigned.apk directly and run it on your own device.
 
 ---
 
