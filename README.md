@@ -29,7 +29,8 @@ It is designed with a clean architecture approach, ensuring scalability, maintai
 - **Dagger Hilt** → Dependency Injection
 - **Room Database, MySQL** → Data persistence
 - **Retrofit** → REST API client for fetching exchange rates.  
-- **ViewModel (Jetpack)** → Lifecycle-aware state management.  
+- **ViewModel (Jetpack)** → Lifecycle-aware state management.
+- **NavigationHost** → Navigation between Screens.
 - **LiveData / StateFlow** → Reactive data observation.  
 - **Clean Architecture + MVVM** → Clear separation of concerns and modular design.
 
