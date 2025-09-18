@@ -34,7 +34,7 @@ It is designed with a clean architecture approach, ensuring scalability, maintai
 ### 1. Clone the repository
 ```bash
 git clone https://github.com/daniospina9/CurrencyConverter.git
-cd GeYuGoApp
+cd CurrencyConverter
 ```
 ### 2. Open in Android Studio
 
