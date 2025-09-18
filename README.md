@@ -16,6 +16,10 @@ It is designed with a clean architecture approach, ensuring scalability, maintai
 
 ## 🎥 Demo in Action
 
+<p align="center">
+  <img src="assets/demo_hd.gif" alt="GeYuGoApp Demo" width="270"/>
+</p>
+
 ---
 
 ## 🛠️ Technologies Used
